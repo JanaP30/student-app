@@ -29,6 +29,7 @@
       
       <a href="{{ url('/student/show/'.$student->id)}}"class="btn btn-sm btn-success">Details</a>
         <a href="{{ url('/student/edit/'.$student->id)}}"class="btn btn-sm btn-info">Edit</a>
+        <a href="{{ url('/student/destroy/'.$student->id)}}"class="btn btn-sm btn-danger">Delete</a>
       </td>
 
     </tr>

@@ -25,7 +25,12 @@
       <td >{{ $student->secondName}}</td>
       <td >{{ $student->age}}</td>
       <td >{{ $student->speciality}}</td>
-      <td ><a href="{{ url('/edit/'.$student->id)}}"class="btn btn-sm btn-info">Edit</a></td>
+      <td >
+      
+      <a href="{{ url('/student/show/'.$student->id)}}"class="btn btn-sm btn-success">Details</a>
+        <a href="{{ url('/edit/'.$student->id)}}"class="btn btn-sm btn-info">Edit</a>
+      </td>
+
     </tr>
     @endforeach
 

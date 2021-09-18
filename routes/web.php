@@ -23,7 +23,7 @@ Route::get('/',[StudentController::class, "index"]);
 //Student routes
 Route::get('/students',[StudentController::class, "index"]);
 Route::get('/edit/{id}',[StudentController::class,"edit"]);
-Route::get('/show/{id}',[StudentController::class, "show"]);
+Route::get('/student/show/{id}',[StudentController::class, "show"]);
 Route::get('/student/create',[StudentController::class, "create"]);
 Route::post('/student/store',[StudentController::class, "store"]);
 Route::post('/update/{id}',[StudentController::class, "update"]);

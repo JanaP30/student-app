@@ -1,6 +1,5 @@
 
 <div class="card mb-3">
-  <img src="https://www.aacmena.com/Images/blogs/6371963650062478521571940616424.png" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">List of students</h5>
     
@@ -27,15 +26,16 @@
       <td >{{ $student->age}}</td>
       <td >{{ $student->speciality}}</td>
       <td ><a href="{{ url('/edit/'.$student->id)}}"class="btn btn-sm btn-info">Edit</a></td>
-
-          
-          
-          
     </tr>
     @endforeach
-  </tbody>
-</table>
 
+   
+  </tbody>
+
+</table>
+  <div class="text-center">
+      {{ $students->links() }}
+    </div>
 
   </div>
 </div>

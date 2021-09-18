@@ -14,7 +14,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
+        $students = Student::paginate(4);
         $data = [
             'students'=>$students
         ];
@@ -28,8 +28,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        $students = Student::all();
-        return view('student' ,['students'=>$students, 'layout'=>'create']);
+        return view('student.create');
     }
 
     /**

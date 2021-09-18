@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreStudentRequest;
+use App\Http\Requests\UpdateStudentRequest;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
@@ -61,7 +62,7 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        $student = Student::find($id);
+        $student = Student::findOrFail($id);
         $data = [
             'student'=>$student
         ];
@@ -76,9 +77,11 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        $student = Student::find($id);
-        $students = Student::all();
-        return view('student',['students'=>$students,'student'=>$student,'layout'=>'edit']);
+        $student = Student::findOrFail($id);
+        $data= [
+            'student' => $student
+        ];
+        return view('student.edit',$data);
 
 
     }
@@ -90,18 +93,17 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateStudentRequest $request, $id)
     {
         //dd($request->input());
-        $student = Student::find($id);
-        $student = new Student();
+        $student = Student::findOrFail($id);
         $student-> cne = $request -> input ('cne');
         $student -> firstName = $request -> input ('firstName');
         $student -> secondName = $request -> input ('secondName');
         $student -> age = $request -> input ('age');
         $student -> speciality = $request -> input ('speciality');
         $student ->save();
-        return redirect('/');
+        return redirect('/students')->withSuccess('You have successfully updated a new student');
 
     }
 
@@ -113,7 +115,7 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        $student = Student::find($id);
+        $student = Student::findOrFail($id);
         $student->delate();
         return redirect();
     }

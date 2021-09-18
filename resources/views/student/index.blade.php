@@ -9,7 +9,7 @@
           <div class = "row">
 
             <selection class="col-md-12">
-               @include("studentslist")
+               @include("student.studentslist")
             </selection>
            <selection class="col" ><section>
             </div>

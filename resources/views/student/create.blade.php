@@ -10,7 +10,7 @@
             <div class="card-body">
                 <h5 class="card-title">Enter the information of the new student</h5>
 
-                <form action="{{url('/store')}}" method="post">
+                <form action="{{url('/student/store')}}" method="post">
                  @csrf
                 <div class="row">
                     <div class="col-6">

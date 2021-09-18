@@ -12,6 +12,7 @@
   </head>
   <body>
     @include("navbar")
+    @include("partials.validation")
     @yield('content')
     <!-- Optional JavaScript; choose one of the two! -->
 

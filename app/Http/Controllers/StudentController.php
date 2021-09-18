@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreStudentRequest;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
@@ -37,7 +38,7 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreStudentRequest $request)
     {
         $student = new Student();
         $student->cne = $request->input('cne');
@@ -46,7 +47,7 @@ class StudentController extends Controller
         $student->age = $request->input('age');
         $student -> speciality = $request -> input ('speciality');
         $student ->save();
-        return redirect('/');
+        return redirect('/students')->withSuccess('You have successfully created a new student');
 
 
 

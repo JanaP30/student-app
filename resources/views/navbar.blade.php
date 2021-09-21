@@ -9,6 +9,7 @@
           <a class="nav-item nav-link active" href="{{url('/students')}}">Students</a>
           <a class="nav-item nav-link active" href="{{url('/teacher')}}">Teachers</a>
           <a class="nav-item nav-link active" href="{{url('/subject')}}">Subject</a>
+          <a class="nav-item nav-link active" href="{{url('/grade')}}">Grade</a>
     </div>
   </div>
 </nav>

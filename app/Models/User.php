@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'group',
     ];
 
     /**
@@ -41,4 +42,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public static $_GROUP_ADMIN=1;
+    public static $_GROUP_USER=2;
+    public static $_GROUP_TEACHER=3;
+
+
+    
+    
+
+
+
+
 }

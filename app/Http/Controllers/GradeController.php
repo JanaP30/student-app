@@ -7,6 +7,7 @@ use App\Models\Grade;
 use App\Http\Requests\StoreGradeRequest;
 use App\Models\Student;
 use App\Models\Subject;
+use App\Models\User;
 
 class GradeController extends Controller
 {

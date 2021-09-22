@@ -21,9 +21,17 @@ Route::get('/', function () {
     return view('Welcome');
 });
 */
-Route::get('/',[StudentController::class, "index"]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get("/success",[App\Http\Controllers\PublicController::class, 'success'])->name('success');
+
+Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+
 
 //Student routes
+
 Route::get('/students',[StudentController::class, "index"]);
 Route::get('/student/edit/{id}',[StudentController::class,"edit"]);
 Route::get('/student/show/{id}',[StudentController::class, "show"]);
@@ -58,3 +66,10 @@ Route::get('/grade/create',[GradeController::class, "create"]);
 Route::post('/grade/store',[GradeController::class, "store"]);
 Route::post('/grade/update/{id}',[GradeController::class, "update"]);
 Route::get('/grade/destroy/{id}',[GradeController::class, "destroy"]);
+});
+
+
+
+
+
+

@@ -1,5 +1,5 @@
-<h1 >Registration is successful</h1>
+<h1 style="color:pink;text-align:center;">Registration is successful</h1>
 
-<a href="{{route('login')}}">
+<a href="{{route('login')}}" style="color:blue;">
     Login
 </a>

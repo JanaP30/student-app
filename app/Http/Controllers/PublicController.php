@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PublicController extends Controller
+class PublicController extends BaseController
 {
     public function success(){
         return view('success');

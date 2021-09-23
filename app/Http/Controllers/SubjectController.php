@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\SubjectExport;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreSubjectRequest;
@@ -9,7 +10,8 @@ use App\Models\Teacher;
 use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
 
-class SubjectController extends Controller
+
+class SubjectController extends BaseController
 {
     /**
      * Display a listing of the resource.

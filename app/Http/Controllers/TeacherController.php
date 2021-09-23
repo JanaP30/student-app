@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\TeacherExport;
 use App\Http\Requests\StoreTeacherRequest;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
 
-class TeacherController extends Controller
+class TeacherController extends BaseController
 {
     /**
      * Display a listing of the resource.

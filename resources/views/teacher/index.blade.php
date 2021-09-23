@@ -4,7 +4,7 @@
  <div class = "container-fluid mt-4">
      <div>
          <a class="btn btn-primary" href="/teacher/create">Create New Teacher</a>
-         <a class="btn btn-primary" href="/teacher/create">Export Teacher</a>
+         <a class="btn btn-primary" href="/teacher/export">Export Teacher</a>
      </div>
           <div class = "row">
 

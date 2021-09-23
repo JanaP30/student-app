@@ -2,39 +2,46 @@
 
 namespace App\Exports;
 
-use App\Models\Grade;
+use App\Models\Subject;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
-class GradeExport implements FromCollection, WithHeadings, WithMapping
+class SubjectExport implements FromCollection, WithHeadings,  WithMapping
 {
     /**
     * @return \Illuminate\Support\Collection
     */
     public function collection()
     {
-        return Grade::all();
+        return Subject::all();
     }
 
     public function headings(): array
     {
         return [
             
-            'Student_id',
-            'Subject_id',
-            'Grade'
+            'subjectName',
+            'Teacher',
+            'LastName',
+            'Literature'
+            
         ];
     }
     public function map($row): array
     {
         return [
-           $row->student_id,
-           $row->subject_id,
-           $row->grade
+           $row->subjectName,
+           $row->teacher->firstName,
+           $row->teacher->secondName,
+           $row->literature
           
         ];
     }
+
+
+
+
 
 
 

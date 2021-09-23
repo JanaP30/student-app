@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\GradeExport;
 use Illuminate\Http\Request;
 use App\Models\Grade;
 use App\Http\Requests\StoreGradeRequest;
@@ -11,7 +12,7 @@ use App\Models\User;
 use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
 
-class GradeController extends Controller
+class GradeController extends BaseController
 {
     /**
      * Display a listing of the resource.

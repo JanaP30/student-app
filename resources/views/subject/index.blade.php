@@ -4,7 +4,7 @@
  <div class = "container-fluid mt-4">
      <div>
          <a class="btn btn-primary" href="/subject/create">Create New Subject</a>
-         <a class="btn btn-primary" href="/subject/create">Export Subject</a>
+         <a class="btn btn-primary" href="/subject/export">Export Subject</a>
      </div>
           <div class = "row">
 

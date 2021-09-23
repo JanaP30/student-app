@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Exports\StudentExport;
 use Maatwebsite\Excel\Facades\Excel;
 
-class StudentController extends Controller
+class StudentController extends BaseController
 {
     /**
      * Display a listing of the resource.

@@ -14,6 +14,7 @@
           @csrf
           <button class="nav-item nav-link active" type="submit">Logout</button>
           </form>
+          <p> {{ $user->name }} </p>
     </div>
   </div>
 </nav>

@@ -6,6 +6,8 @@ use App\Models\Subject;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreSubjectRequest;
 use App\Models\Teacher;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SubjectController extends Controller
 {
@@ -68,7 +70,7 @@ class SubjectController extends Controller
         $subject = Subject::findOrFail($id);
         $data = [
             'subject'=>$subject,
-            
+
             'grades'=>$subject->grades()->paginate(4)
         ];
         return view('subject.show',$data);
@@ -121,4 +123,12 @@ class SubjectController extends Controller
         $subject->delete();
         return redirect('/subject')->withSuccess("You have successfully deleted subject");
     }
+
+    public function export() 
+    {
+        return Excel::download(new SubjectExport, 'subject.xlsx');
+    }
+
+
+
 }

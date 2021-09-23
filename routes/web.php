@@ -48,15 +48,17 @@ Route::get('/teacher/create',[TeacherController::class, "create"]);
 Route::post('/teacher/store',[TeacherController::class, "store"]);
 Route::post('/teacher/update/{id}',[TeacherController::class, "update"]);
 Route::get('/teacher/destroy/{id}',[TeacherController::class, "destroy"]);
+Route::get('teacher/export', [TeacherController::class, "export"]);
 
-   //Teacher routes
-   Route::get('/subject',[SubjectController::class, "index"]);
+   //Subject routes
+Route::get('/subject',[SubjectController::class, "index"]);
 Route::get('/subject/edit/{id}',[SubjectController::class,"edit"]);
 Route::get('/subject/show/{id}',[SubjectController::class, "show"]);
 Route::get('/subject/create',[SubjectController::class, "create"]);
 Route::post('/subject/store',[SubjectController::class, "store"]);
 Route::post('/subject/update/{id}',[SubjectController::class, "update"]);
 Route::get('/subject/destroy/{id}',[SubjectController::class, "destroy"]);
+Route::get('subject/export', [SubjectController::class, "export"]);
 
 //Grades routes
 Route::get('/grade',[GradeController::class, "index"]);
@@ -66,6 +68,7 @@ Route::get('/grade/create',[GradeController::class, "create"]);
 Route::post('/grade/store',[GradeController::class, "store"]);
 Route::post('/grade/update/{id}',[GradeController::class, "update"]);
 Route::get('/grade/destroy/{id}',[GradeController::class, "destroy"]);
+Route::get('grade/export', [GradeController::class, "export"]);
 });
 
 

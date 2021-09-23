@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTeacherRequest;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TeacherController extends Controller
 {
@@ -117,4 +119,12 @@ class TeacherController extends Controller
         $teacher->delete();
         return redirect('/teacher')->withSuccess("You have successfully deleted teacher");
     }
+
+
+    public function export() 
+    {
+        return Excel::download(new TeacherExport, 'teacher.xlsx');
+    }
+
+
 }

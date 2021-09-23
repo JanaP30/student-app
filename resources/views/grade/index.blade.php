@@ -4,6 +4,7 @@
  <div class = "container-fluid mt-4">
      <div>
          <a class="btn btn-primary" href="/grade/create">Create New Grade</a>
+         <a class="btn btn-primary" href="/grade/create">Export Grade</a>
      </div>
           <div class = "row">
 

@@ -8,6 +8,8 @@ use App\Http\Requests\StoreGradeRequest;
 use App\Models\Student;
 use App\Models\Subject;
 use App\Models\User;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class GradeController extends Controller
 {
@@ -132,4 +134,12 @@ class GradeController extends Controller
         $grades->delete();
         return redirect('/grade')->withSuccess("You have successfully deleted grade");
     }
+
+
+    public function export() 
+    {
+        return Excel::download(new GradeExport, 'grade.xlsx');
+    }
+
+
 }

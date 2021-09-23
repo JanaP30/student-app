@@ -67,7 +67,9 @@ class SubjectController extends Controller
     {
         $subject = Subject::findOrFail($id);
         $data = [
-            'subject'=>$subject
+            'subject'=>$subject,
+            
+            'grades'=>$subject->grades()->paginate(4)
         ];
         return view('subject.show',$data);
     }

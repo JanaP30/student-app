@@ -64,7 +64,9 @@ class StudentController extends Controller
     {
         $student = Student::findOrFail($id);
         $data = [
-            'student'=>$student
+            'student'=>$student,
+            'grades'=>$student->grades()->paginate(4)
+
         ];
         return view('student.show',$data);
     }

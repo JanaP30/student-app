@@ -43,7 +43,11 @@
 
         </div>
      </div>
-     
+     <selection class="col-md-12">
+               @include("subject.subjectlist")
+            </selection>
+           <selection class="col" ><section>
+            
 
  </div>
 

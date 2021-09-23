@@ -21,7 +21,7 @@
             <p>Professor Name</p>
         </div>
         <div class="col-6">
-            <p><strong>{{ $professor->professorName }}</strong></p>
+            <p><strong>{{ $subject->teacher->professorName }}</strong></p>
 
         </div>
      </div>
@@ -40,7 +40,10 @@
 
         </div>
      </div>
-     
+     <selection class="col-md-12">
+               @include("grade.gradelist")
+            </selection>
+           <selection class="col" ><section>
 
  </div>
 

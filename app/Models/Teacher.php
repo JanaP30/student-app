@@ -35,4 +35,12 @@ class Teacher extends Model
         return self::getGenders()[$this->gender];
     }
 
+    public function subjects()
+    {
+
+        return $this->hasMany(Subject::class);
+
+
+    }
+
 }

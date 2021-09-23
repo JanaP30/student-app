@@ -18,4 +18,17 @@ class Student extends Model
         'age',
         'speciality'
     ];
+
+    public function grades(){
+
+           return $this->hasMany(Grade::class); 
+
+    }
+
+    
+
+
+
+
+
 }

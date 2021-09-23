@@ -52,6 +52,10 @@
 
         </div>
      </div>
+            <selection class="col-md-12">
+               @include("grade.gradelist")
+            </selection>
+           <selection class="col" ><section>
 
  </div>
 

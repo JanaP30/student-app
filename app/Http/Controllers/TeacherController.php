@@ -63,7 +63,8 @@ class TeacherController extends Controller
     {
         $teacher = Teacher::findOrFail($id);
         $data = [
-            'teacher'=>$teacher
+            'teacher'=>$teacher,
+            'subjects'=>$teacher->subjects()->paginate(4)
         ];
         return view('teacher.show',$data);
     }

@@ -6,6 +6,8 @@ use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use App\Exports\StudentExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class StudentController extends Controller
 {
@@ -122,4 +124,15 @@ class StudentController extends Controller
         $student->delete();
         return redirect('/students')->withSuccess("You have successfully deleted student");
     }
+
+    public function export() 
+    {
+        return Excel::download(new StudentExport, 'student.xlsx');
+    }
+
+
+
+
+
+
 }

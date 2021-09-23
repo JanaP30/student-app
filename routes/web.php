@@ -38,6 +38,7 @@ Route::get('/student/create',[StudentController::class, "create"]);
 Route::post('/student/store',[StudentController::class, "store"]);
 Route::post('/student/update/{id}',[StudentController::class, "update"]);
 Route::get('/student/destroy/{id}',[StudentController::class, "destroy"]);
+Route::get('student/export', [StudentController::class, "export"]);
 
 //Teacher routes
 Route::get('/teacher',[TeacherController::class, "index"]);

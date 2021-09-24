@@ -11,16 +11,16 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class GradeEntered extends Mailable
+class TeacherEntered extends Mailable
 {
     use Queueable, SerializesModels;
 
-    
     /**
      * Create a new message instance.
      *
      * @return void
      */
+
     public $student;
     public $grade;
     public $mail_subject;
@@ -42,9 +42,7 @@ class GradeEntered extends Mailable
      */
     public function build()
     {
-        
-
-        return $this->view('mail.student_grade_notification')
+        return $this->view('mail.teacher_grade_notification')
         ->subject('Grade entered')
         ->with([
             

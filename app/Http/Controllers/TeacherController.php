@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use App\Exports\TeacherExport;
 use App\Http\Requests\StoreTeacherRequest;
 use App\Models\Teacher;
+use App\Models\Student;
+use App\Models\Subject;
+use App\Models\Grade;
 use Illuminate\Http\Request;
 use App\Exports\UsersExport;
+use App\Mail\TeacherEntered;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Notifications\GradeEntered;
+use App\Mail\GradeEntered as MailTeacherEntered;
+use Illuminate\Support\Facades\Mail;
 
 class TeacherController extends BaseController
 {
@@ -46,13 +53,15 @@ class TeacherController extends BaseController
      */
     public function store(StoreTeacherRequest $request)
     {
+        
         $teacher = new Teacher();
-       
+
         $teacher ->firstName = $request -> input ('firstName');
         $teacher->secondName = $request -> input ('secondName');
         $teacher->email = $request->input('email');
         $teacher -> gender = $request -> input ('gender');
         $teacher ->save();
+       
         return redirect('/teacher')->withSuccess('You have successfully created a teacher');
     }
 

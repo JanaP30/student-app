@@ -70,6 +70,7 @@ class GradeController extends BaseController
         $grades->grade= $request->input('grade');
         $grades->save();
         Mail::to($student->user)->send(new MailGradeEntered($student, $grades, $subject));
+        
         return redirect('/grade')->withSuccess('You have successfully created a grade');
     }
 

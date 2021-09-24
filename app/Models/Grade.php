@@ -52,4 +52,7 @@ protected $fillable = [
     {
             return $this->belongsTo(Subject::class);
     }
+
+
+    
 }

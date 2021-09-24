@@ -10,7 +10,9 @@ use App\Models\Student;
 use App\Models\Subject;
 use App\Models\User;
 use App\Exports\UsersExport;
+use App\Mail\GradeEntered as MailGradeEntered;
 use App\Notifications\GradeEntered;
+use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 
 class GradeController extends BaseController
@@ -46,6 +48,7 @@ class GradeController extends BaseController
            'grades'=> $grades
        ];
        
+
         return view('grade.create', $data);
     }
 
@@ -59,14 +62,14 @@ class GradeController extends BaseController
     
     {
         $student= Student::find($request -> input ('student_id'));
-       
+        $subject= Subject::find($request -> input ('subject_id'));
         $grades = new Grade();
 
         $grades ->subject_id = $request -> input ('subject_id');
         $grades->student_id = $request -> input ('student_id');
         $grades->grade= $request->input('grade');
         $grades->save();
-        $student->user->notify(new GradeEntered());
+        Mail::to($student->user)->send(new MailGradeEntered($student, $grades, $subject));
         return redirect('/grade')->withSuccess('You have successfully created a grade');
     }
 

@@ -10,6 +10,7 @@ use App\Models\Student;
 use App\Models\Subject;
 use App\Models\User;
 use App\Exports\UsersExport;
+use App\Notifications\GradeEntered;
 use Maatwebsite\Excel\Facades\Excel;
 
 class GradeController extends BaseController
@@ -57,12 +58,15 @@ class GradeController extends BaseController
     public function store(StoreGradeRequest $request)
     
     {
+        $student= Student::find($request -> input ('student_id'));
+       
         $grades = new Grade();
 
         $grades ->subject_id = $request -> input ('subject_id');
         $grades->student_id = $request -> input ('student_id');
         $grades->grade= $request->input('grade');
         $grades->save();
+        $student->user->notify(new GradeEntered());
         return redirect('/grade')->withSuccess('You have successfully created a grade');
     }
 

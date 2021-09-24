@@ -24,11 +24,15 @@ class Student extends Model
            return $this->hasMany(Grade::class); 
 
     }
+    public function user(){
 
+        return $this->belongsTo(User::class); 
+    }
+ }
     
 
 
 
 
 
-}
+

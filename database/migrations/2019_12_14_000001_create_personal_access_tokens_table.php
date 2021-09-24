@@ -21,6 +21,7 @@ class CreatePersonalAccessTokensTable extends Migration
             $table->string('secondName');
             $table->integer('age');
             $table->string('speciality');
+          
         });
     }
 

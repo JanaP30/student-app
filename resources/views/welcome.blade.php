@@ -9,6 +9,14 @@
   <h5>Hello World</h5>
   <h1 class="w3-animate-zoom">Welcome to a Student Management application</h1>
   <p><a href="{{ route('login') }}" target="_blank">Log in</a> </p>
+
+  <div class="skills">
+
+      <label for="html">In progress</label>
+      <br/>
+      <meter id="html" value="8" min="0" max="10">5 out of 20</meter><br>
+
+  </div>
  
 
 </body>

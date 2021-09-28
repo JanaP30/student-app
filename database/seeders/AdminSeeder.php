@@ -19,7 +19,7 @@ class AdminSeeder extends Seeder
         $adminUserExist = User::where('email', 'admin@admin.com')->first();
         if(!$adminUserExist){
             $rootUser = User::create([
-                'name'=> 'admin',
+            'name'=> 'admin',
             'email' => 'admin@admin.com',
             'password' => Hash::make('pass123'),
             'email_verified_at'=> now(),
